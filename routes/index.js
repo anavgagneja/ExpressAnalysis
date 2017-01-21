@@ -18,7 +18,7 @@ var tone_analyzer = new watson.ToneAnalyzerV3({
 
 router.get('/', function(req, res, next) {
 
-    res.render('editor', { emotionArray: [],languageArray: [], socialArray: []});
+    res.render('editor', { emotionArray: [],languageArray: [], socialArray: [], numMisspelled: -1,ratio: -1.0, numWords: -1});
 
 });
 
@@ -27,53 +27,50 @@ router.post('/add', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
+
+    dictionary(function (err, dict) {
+        if (err) {
+            throw err;
+        }
+
+        var spell = nspell(dict);
+        var email = req.body.txt;
+        var punctuationless = email.replace(/[.,\/#!$%?\^&\*;:{}=\_`~()]/g,"");
+        var finalString = punctuationless.replace(/\s{2,}/g," ");
+        var words = finalString.split(" ");
+
+        numWords = words.length;
+
+        for(var letter=65;letter<91;letter++)
+        {
+            var _char = String.fromCharCode(letter);
+            spell.remove(_char);
+        }
+        for(var letter=97;letter<=122;letter++)
+        {
+            var _char = String.fromCharCode(letter);
+            spell.remove(_char);
+        }
+
+        spell.add('A');
+        spell.add('a');
+        spell.add('i');
+        spell.add('I');
+        console.log(words);
+
+        words.forEach(function(obj) {
+            if(spell.correct(obj) == false) {
+                console.log(obj);
+                numMisspelled++;
+            }
+        })
+        ratio = numMisspelled/numWords;
+    });
+
     tone_analyzer.tone({ text: req.body.txt },
 
-
-        //console.log("There are " + misspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
-        //res.render('editor', { misspelled: misspelled,ratio: ratio, numWords: numWords});
-
         function(err, tone) {
-
-            dictionary(function (err, dict) {
-                if (err) {
-                    throw err;
-                }
-
-                var spell = nspell(dict);
-                var email = req.body.txt;
-                var punctuationless = email.replace(/[.,\/#!$%\^&\*;:{}=\_`~()]/g,"");
-                var finalString = punctuationless.replace(/\s{2,}/g," ");
-                var words = finalString.split(" ");
-
-                numWords = words.length;
-
-                for(var letter=65;letter<91;letter++)
-                {
-                    var _char = String.fromCharCode(letter);
-                    spell.remove(_char);
-                }
-                for(var letter=97;letter<=122;letter++)
-                {
-                    var _char = String.fromCharCode(letter);
-                    spell.remove(_char);
-                }
-
-                spell.add('A');
-                spell.add('a');
-                spell.add('i');
-                spell.add('I');
-                console.log(words);
-
-                words.forEach(function(obj) {
-                    if(spell.correct(obj) == false) {
-                        console.log(obj);
-                        numMisspelled++;
-                    }
-                })
-                ratio = numMisspelled/numWords;
-            });
-
+            console.log("There are " + numMisspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
             if (err)
             console.log(err);
             else {
