@@ -2,7 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
+var watson = require('watson-developer-cloud/tone_analyzer/v3');
+
+var tone_analyzer = new ToneAnalyzerV3({
+  username: 'cdedd54c-683f-4e0a-848c-262a02f354e8',
+  password: 'ypYZZkbvj6bc',
+  version: 'v3',
+  version_date: '2016-05-19 '
+});
+
 router.get('/', function(req, res, next) {
+
     tone_analyzer.tone({ text: 'A word is dead when it is said, some say. Emily Dickinson' },
       function(err, tone) {
         if (err)
