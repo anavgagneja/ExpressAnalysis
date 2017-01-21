@@ -29,48 +29,51 @@ router.post('/add', function(req, res, next) {
     var numMisspelled = 0;
     tone_analyzer.tone({ text: req.body.txt },
 
-        dictionary(function (err, dict) {
-            if (err) {
-                throw err;
-            }
 
-            var spell = nspell(dict);
-            var email = req.body.txt;
-            var punctuationless = email.replace(/[.,\/#!$%\^&\*;:{}=\_`~()]/g,"");
-            var finalString = punctuationless.replace(/\s{2,}/g," ");
-            var words = finalString.split(" ");
-
-             numWords = words.length;
-
-            for(var letter=65;letter<91;letter++)
-            {
-                var _char = String.fromCharCode(letter);
-                spell.remove(_char);
-            }
-            for(var letter=97;letter<=122;letter++)
-            {
-                var _char = String.fromCharCode(letter);
-                spell.remove(_char);
-            }
-
-            spell.add('A');
-            spell.add('a');
-            spell.add('i');
-            spell.add('I');
-            console.log(words);
-
-            words.forEach(function(obj) {
-                if(spell.correct(obj) == false) {
-                    console.log(obj);
-                    numMisspelled++;
-                }
-            })
-            ratio = numMisspelled/numWords;
-            //console.log("There are " + misspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
-            //res.render('editor', { misspelled: misspelled,ratio: ratio, numWords: numWords});
-        }),
+        //console.log("There are " + misspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
+        //res.render('editor', { misspelled: misspelled,ratio: ratio, numWords: numWords});
 
         function(err, tone) {
+
+            dictionary(function (err, dict) {
+                if (err) {
+                    throw err;
+                }
+
+                var spell = nspell(dict);
+                var email = req.body.txt;
+                var punctuationless = email.replace(/[.,\/#!$%\^&\*;:{}=\_`~()]/g,"");
+                var finalString = punctuationless.replace(/\s{2,}/g," ");
+                var words = finalString.split(" ");
+
+                numWords = words.length;
+
+                for(var letter=65;letter<91;letter++)
+                {
+                    var _char = String.fromCharCode(letter);
+                    spell.remove(_char);
+                }
+                for(var letter=97;letter<=122;letter++)
+                {
+                    var _char = String.fromCharCode(letter);
+                    spell.remove(_char);
+                }
+
+                spell.add('A');
+                spell.add('a');
+                spell.add('i');
+                spell.add('I');
+                console.log(words);
+
+                words.forEach(function(obj) {
+                    if(spell.correct(obj) == false) {
+                        console.log(obj);
+                        numMisspelled++;
+                    }
+                })
+                ratio = numMisspelled/numWords;
+            });
+
             if (err)
             console.log(err);
             else {
