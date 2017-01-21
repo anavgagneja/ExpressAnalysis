@@ -38,6 +38,19 @@
 		background-color:black;
 		height: 1px;
 	}
+	.progress {
+		box-shadow: 0px 0px 10px #fff;
+	}
+	.panel {
+		background-color: #EEEEEE;
+		border: 0px;
+	}
+	.progress-bar-fear {
+		background-color: blueviolet;
+	}
+	.progress-bar-sad {
+		background-color: grey;
+	}
 </style>
 <body>
 	<div class="row header text-center">
@@ -53,7 +66,7 @@
 				<div class="form-group">
 					<label>Message</label>
 					<form method="post" action="/add" class="text-center">
-						<textarea class="form-control" name="txt" id="email-text" style="height:400px"></textarea>
+						<textarea class="form-control" name="txt" id="email-text" value="<?php echo $_GET['txt'];?>" style="height:400px"></textarea>
 						<br>
 						<input type="submit" value="Submit" class="btn-primary" style="width:200px"/>
 					</form>
@@ -61,15 +74,49 @@
 			</div>
 			<div class="col-md-6">
 				<label>Analysis</label>
-				<div class="panel panel-default" style="height:450px">
-					<div class="panel-body">
-						<table style="width:350px; border:1px solid black;">
-						
-						<ul>
-  							<% for(var i=0; i<emotionArray.length; i++) {%>
-   							 <li><%= emotionArray[i].name %> - <%= emotionArray[i].value %></li>
+				<!--<div class="panel panel-default" style="height:450px">
+					<div class="panel-body">-->
+					<div class="row">
+					<div class="col-md-6"
+  							<% for(var i=4; i<emotionArray.length; i++) {%>
+   							 <label><%= emotionArray[0].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
+   							 </div>
+   							 <label><%= emotionArray[1].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
+   							 </div>
+   							 <label><%= emotionArray[2].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
+   							 </div>
+   							 <label><%= emotionArray[3].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
+   							 </div>
+   							 <label><%= emotionArray[4].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
+   							 </div>
   							<% } %>
-						</ul>
+   					</div>
+   					<div class="col-md-6"
+  							<% for(var i=2; i<languageArray.length; i++) {%>
+   							 <label><%= languageArray[0].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
+   							 </div>
+   							 <label><%= languageArray[1].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
+   							 </div>
+   							 <label><%= languageArray[2].name %> </label>
+   							 <div class="progress">
+   							 	<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+   							 </div>
+   							 
+  							<% } %>
    					</div>
 				</div>
 			</div>
