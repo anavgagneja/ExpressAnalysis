@@ -67,7 +67,7 @@
                       var ratio = misspelled/numWords;
                       console.log("There are " + misspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
                        res.render('editor', { misspelled: misspelled,ratio: ratio, numWords: numWords});
-                    });
+                   }),
 
         function(err, tone) {
             if (err)
