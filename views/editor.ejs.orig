@@ -69,11 +69,18 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Message</label>
+<<<<<<< HEAD
 					<form method="post" action="/" class="text-center myForm">
 						<textarea class="form-control" id="textArea" name="text" id="email-text" value="fgfjgjhk" style="height:400px"><%= text %></textarea>
 						<br>
+						<input type="submit" id="submit" value="Submit" class="btn-primary" style="width:200px"/>
+=======
+					<form method="post" action="/add" class="text-center">
+						<textarea class="form-control" name="txt" id="email-text" style="height:400px"></textarea>
+						<br>
 						<input type="submit" value="Analyze" class="btn-primary" style="width:200px"/>
 						<input type="button" value="Insert" class="btn-primary  js-insert" style="width:200px"/>
+>>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
 					</form>
 
 					<script type="text/javascript">
@@ -133,6 +140,13 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+	</body>
+
+	
+
+=======
 </div>
 </body>
+>>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
 </html>
