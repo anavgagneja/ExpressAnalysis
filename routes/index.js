@@ -38,7 +38,7 @@ router.post('/resolver', cors(corsOptions), function(req, res, next) {
 });
 
 
-router.post('/add', function(req, res, next) {
+router.post('/', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
@@ -49,7 +49,7 @@ router.post('/add', function(req, res, next) {
         }
 
         var spell = nspell(dict);
-        var email = req.body.txt;
+        var email = req.body.text;
         var punctuationless = email.replace(/[.,\/#!$%?\^&\*;:{}=\_`~()]/g,"");
         var finalString = punctuationless.replace(/\s{2,}/g," ");
         var words = finalString.split(" ");
@@ -82,7 +82,7 @@ router.post('/add', function(req, res, next) {
         ratio = numMisspelled/numWords;
     });
 
-    tone_analyzer.tone({ text: req.body.txt },
+    tone_analyzer.tone({ text: req.body.text },
 
         function(err, tone) {
             console.log("There are " + numMisspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
