@@ -38,7 +38,7 @@ router.post('/add', function(req, res, next) {
          emotion.forEach(function(obj){
              var newObj = {
                  name: obj["tone_name"],
-                 value: obj["score"]
+                 value: obj["score"]*100
              }
              emotionArray.push(newObj);
          });
@@ -48,7 +48,7 @@ router.post('/add', function(req, res, next) {
          language.forEach(function(obj){
              var newObj = {
                  name: obj["tone_name"],
-                 value: obj["score"]
+                 value: obj["score"]*100
              }
              languageArray.push(newObj);
          });
@@ -58,14 +58,19 @@ router.post('/add', function(req, res, next) {
          social.forEach(function(obj){
              var newObj = {
                  name: obj["tone_name"],
-                 value: obj["score"]
+                 value: obj["score"]*100
              }
              socialArray.push(newObj);
          });
 
          emotionArray.forEach(function(obj){
              console.log(obj.name +  " - " + obj.value);
-
+         });
+         languageArray.forEach(function(obj){
+             console.log(obj.name +  " - " + obj.value);
+         });
+         socialArray.forEach(function(obj){
+             console.log(obj.name +  " - " + obj.value);
          });
            res.render('editor', { emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray});
      }
