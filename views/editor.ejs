@@ -65,11 +65,17 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Message</label>
-					<form method="post" action="/add" class="text-center">
-						<textarea class="form-control" name="txt" id="email-text" value="<?php echo $_GET['txt'];?>" style="height:400px"></textarea>
+					<form method="post" action="/" class="text-center myForm">
+						<textarea class="form-control" id="textArea" name="text" id="email-text" value="fgfjgjhk" style="height:400px"><%= text %></textarea>
 						<br>
-						<input type="submit" value="Submit" class="btn-primary" style="width:200px"/>
+						<input type="submit" id="submit" value="Submit" class="btn-primary" style="width:200px"/>
 					</form>
+
+					<script type="text/javascript">
+
+					
+				</script>
+
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -123,4 +129,7 @@
 		</div>
 	</div>
 	</body>
+
+	
+
 </html>

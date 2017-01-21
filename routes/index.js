@@ -18,16 +18,16 @@ var tone_analyzer = new watson.ToneAnalyzerV3({
 
 router.get('/', function(req, res, next) {
 
-    res.render('editor', { emotionArray: [],languageArray: [], socialArray: []});
+    res.render('editor', { text: "", emotionArray: [],languageArray: [], socialArray: []});
 
 });
 
 
-router.post('/add', function(req, res, next) {
+router.post('/', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
-    tone_analyzer.tone({ text: req.body.txt },
+    tone_analyzer.tone({ text: req.body.text },
 
 
         //console.log("There are " + misspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
@@ -41,7 +41,7 @@ router.post('/add', function(req, res, next) {
                 }
 
                 var spell = nspell(dict);
-                var email = req.body.txt;
+                var email = req.body.text;
                 var punctuationless = email.replace(/[.,\/#!$%\^&\*;:{}=\_`~()]/g,"");
                 var finalString = punctuationless.replace(/\s{2,}/g," ");
                 var words = finalString.split(" ");
@@ -124,7 +124,7 @@ router.post('/add', function(req, res, next) {
                 socialArray.forEach(function(obj){
                     console.log(obj.name +  " - " + obj.value);
                 });
-                res.render('editor', { emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords});
+                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords});
             }
         });
 
