@@ -1,6 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
+var cors = require('cors');
 
 //Requires for spell-checker
 var dictionary = require('dictionary-en-us');
@@ -20,6 +21,20 @@ router.get('/', function(req, res, next) {
 
     res.render('editor', { emotionArray: [],languageArray: [], socialArray: []});
 
+});
+
+
+var corsOptions = {
+  origin: /^[^.\s]+\.mixmax\.com$/,
+  credentials: true
+};
+router.post('/resolver', cors(corsOptions), function(req, res, next) {
+  var data = JSON.parse(req.body.params);
+  var html = data.text;
+  res.json({
+    body: html,
+    raw: true
+  });
 });
 
 
@@ -72,6 +87,7 @@ router.post('/add', function(req, res, next) {
                     }
                 })
                 ratio = numMisspelled/numWords;
+                console.log("BEFORE ratio: " + ratio + " numWords: " + numWords);
             });
 
             if (err)
@@ -124,6 +140,7 @@ router.post('/add', function(req, res, next) {
                 socialArray.forEach(function(obj){
                     console.log(obj.name +  " - " + obj.value);
                 });
+                console.log("AFTERWARD ratio: " + ratio + " numWords: " + numWords);
                 res.render('editor', { emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords});
             }
         });
