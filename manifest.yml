@@ -1,0 +1,7 @@
+applications:
+	services:
+		my-service-instance
+	name: bmake.mybluemix.net
+	command: npm start
+	path: .
+	memory: 512M
