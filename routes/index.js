@@ -54,13 +54,14 @@ router.post('/', function(req, res, next) {
 
         var high = 47.0
         var analytical = languageArray[0].value;
+        var confidence = languageArray[1].value;
         var tentative = languageArray[2].value;
         var openness = socialArray[0].value;
         var conscientiousness = socialArray[1].value;
         var extraversion = socialArray[2].value;
         var agreeableness = socialArray[3].value;
-        var emotionalRange = socialArray[4].value * 3;
-
+        var emotionalRange = socialArray[4].value;
+/*
         if(extraversion - conscientiousness >= 30) {
             //this is usually more casual
             extraversion *= 3;
@@ -100,7 +101,8 @@ router.post('/', function(req, res, next) {
 
         //console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
         coeff /= (numArray.length);
-        
+*/
+        coeff = openness + conscientiousness + agreeableness + Math.abs(emotionalRange - 50) + confidence - tentative;
         if(coeff < 33 && coeff >= 0) {
             color = '#CF000F';
         }
@@ -114,6 +116,8 @@ router.post('/', function(req, res, next) {
             color = 'green';
             coeff = 100;
         }
+
+
         console.log("Coefficient: " + coeff);
     };
 
