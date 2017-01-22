@@ -10,13 +10,16 @@
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.js"></script>
 
 </head>
 <style>
@@ -191,7 +194,7 @@
 	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     
     color: white;
-	}
+	
 	  position: fixed;
 	  right: 0;
 	  bottom: 0;
@@ -207,6 +210,8 @@
 	.logo {
 		height: 50px;
 	}
+
+
 </style>
 <body>
 	 <nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
@@ -274,7 +279,7 @@ $(document).ready(function(){
 						<% for(var i=4; i<emotionArray.length; i++) {%>
 						<p>Anger</p>
 						<div class="progress">
-							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
+							<div class="progress-bar progress-bar-danger progress-bar-striped active anger" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
 						</div>
 						<p>Disgust</p>
 						<div class="progress">
@@ -313,6 +318,25 @@ $(document).ready(function(){
 
 				</div>
 			</div>
+
+			<script>
+
+			var anger = $(".anger").width();
+
+			if(anger > 50) {
+				swal({
+				  title: "Don't be a bully!",
+				  text: "Your email seems like it will be used to bully someone.",
+				  type: "warning",
+				  confirmButtonColor: "#780F8E",
+				  confirmButtonText: "OK",
+				});
+			}
+				
+				
+
+			</script>
+
 		</div>
 	</div>
 	
