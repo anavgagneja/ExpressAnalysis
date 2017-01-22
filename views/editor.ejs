@@ -232,6 +232,12 @@
 		$(document).ready(function(){
 			$('[data-toggle="popover"]').popover();   
 		});
+		var isMixmax = !!window.opener;
+		if(isMixmax) {
+
+			$(".js-insert").hide();
+			console.log(isMixmax);
+		}
 	</script>
 
 	<div class="container-fluid">
@@ -248,7 +254,7 @@
 						<br>
 						<input type="submit" value="Analyze" class="button submit" data-toggle="popover" data-placement="top" data-content="Content"/>
 
-						<input type="button" value="Insert" class="button  js-insert" style="margin-top: 10px;" data-toggle="popover" data-placement="top" data-content="Content"/>
+						<input type="button" value="Insert" class="button js-insert" style="margin-top: 10px;" data-toggle="popover" data-placement="top" data-content="Content"/>
 					</form>
 
 

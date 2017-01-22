@@ -7,3 +7,11 @@ $(() => {
 		});
 	});
 })
+		
+		
+var isMixmax = !!window.opener;
+console.log(isMixmax);	
+		if(!isMixmax) {
+
+			$(".js-insert").hide();
+		}
