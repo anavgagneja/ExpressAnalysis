@@ -321,9 +321,7 @@ $(document).ready(function(){
 
 			<script>
 
-			var anger = $(".anger").width();
-
-			if(anger > 50) {
+			if(<%= emotionArray[0].value%> > 50 && <%= socialArray[1].value%> < 40) {
 				swal({
 				  title: "Don't be a bully!",
 				  text: "Your email seems like it will be used to bully someone.",
@@ -332,9 +330,6 @@ $(document).ready(function(){
 				  confirmButtonText: "OK",
 				});
 			}
-				
-				
-
 			</script>
 
 		</div>
