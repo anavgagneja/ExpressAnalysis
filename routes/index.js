@@ -21,7 +21,8 @@ router.get('/', function(req, res, next) {
 
 var array = Array.apply(null, Array(5)).map(Number.prototype.valueOf,0);
 var array2 = Array.apply(null, Array(3)).map(Number.prototype.valueOf,0);
-    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: []});
+var coeff = 0;
+    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: [], coeff: coeff});
 
 });
 
@@ -44,7 +45,7 @@ router.post('/', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
-    var coeff = 1.0;
+    coeff = 1.0;
 
     function calculateCoefficient(languageArray, socialArray, ratio) {
         //high emotional range + extraversion is HIGHLY impacts casualness
@@ -185,7 +186,7 @@ router.post('/', function(req, res, next) {
                 });
 
                 calculateCoefficient(languageArray, socialArray, ratio);
-                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords});
+                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords, coeff: coeff});
             }
         });
 
