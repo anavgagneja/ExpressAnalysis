@@ -14,7 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -129,7 +129,7 @@
 	.footer {
 		position: absolute;
 		right: 0;
-		bottom: -60px;
+		bottom: -50px;
 		color: white;
 		left: 0;
 		padding: 1rem;
@@ -142,8 +142,10 @@
 	}
 
 	.navbar-default {
+
 		border:none;
 		background-color: #780F8E;
+
 	}
 	#h5 {
 		font-family: 'Montserrat', sans-serif;
@@ -167,39 +169,37 @@
 	}
 
 	.info {
-		font-size: 16px;
+		
+		margin-top: -7px;
+		color:white;
 	}
+
 	.popover{
 		background: rgba(0,0,0,.85);
 	}
-
-
-
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-
-		color: white;
-		
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		color: white;
-		left: 0;
-		padding: 1rem;
-		text-align: center;
-		background-color: #780F8E;
-	}
+	
 	.popover.bottom .arrow:after { 
-		border-bottom-color: rgba(0,0,0,.85);
+		border-bottom-color: (0,0,0,.85);
 	}
 	.popover.top .arrow:after { 
 		border-top-color: rgba(0,0,0,.85);
 	}
+
+	.popover.bottom {
+		margin-top: -10px;
+		text-align: center;
+	}
+
 	#h5 {
 		font-family: 'Montserrat', sans-serif;
 	}
+
 	.logo {
+		margin-left: 0px;
 		height: 50px;
 	}
+
+	
 
 
 </style>
@@ -221,10 +221,11 @@
 				<ul class="nav navbar-nav " style="text-align:center; margin-top:40px;">
 
 					<li><p style="font-size: 30px; color:white;">Placeholder</p></li> 
+					
 					<li>
 
-						<a  href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
-
+						<a href="#" title="About" data-toggle="popover" data-placement="bottom" data-content="Content"><div><p class="fa fa-info-circle info fa-2x" aria-hidden="true"></p></div></a>
+						
 					</li>
 
 				</ul>
