@@ -355,13 +355,14 @@
 					</div>
 					<div class="col-md-12">
 						<br>
-						<br>
 						<style> 
 							.result {
 								background-color: <%=color%>;
 							}
 						</style>
-						<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Content">
+						<hr>
+						<p class="text-center">Overall Rating (Hover for Info)</p>
+						<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="This is an overall rating of your formula based on a combination of all of the above traits and some others such as openness, extroversion, and emotional range.">
 							<div class="progress-bar progress-bar-success progress-bar-striped active result" role="progressbar" aria-valuenow='<%=coeff%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=coeff%>%'></div>
 						</div>
 					</div>
@@ -373,7 +374,7 @@
 			if(<%= emotionArray[0].value%> > 50 && <%= socialArray[1].value%> < 40) {
 				swal({
 				  title: "Don't be a bully!",
-				  text: "Your email seems like it will be used to bully someone.",
+				  text: "We've detected that your message may contain rhetoric representative of cyber-bullying. 20% of cyber-bullied children think about suicide and 1 in 10 actually attempt it. Please be a part of the solution and help #HackHarassment.",
 				  type: "warning",
 				  confirmButtonColor: "#780F8E",
 				  confirmButtonText: "OK",
