@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bootstrap Theme Simply Me</title>
+	<title>MixMax Boilermake</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,6 +14,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+
 </head>
 <style>
 
@@ -23,11 +27,11 @@
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
 	}
 	.header {
-		height: 50px;
+		
 		background-color: #780F8E;
 		width: 100%;
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		box-shadow: rgba(0, 0, 0, 1) 0px 4px 4px;
+		
 	}
 	.header-text {
 		padding-top: 10px;
@@ -71,6 +75,9 @@
 	.progress-language {
 
 	}
+	.header-text {
+		margin-top: 5px;
+	}
 
 	
 	.button {
@@ -91,32 +98,146 @@
 
 	
 	#email-text {
-		background: #C89BD2;
+		background: white;
 		border-color: #780F8E;
-		border-width: 3px 3px 3px 3px;
+		border-width: 4px 4px 4px 4px;
+<<<<<<< HEAD
 		color: white;
+=======
+		color: black;
+	}
+	.logo {
+		height: 60px;
+		margin-top: 6px;
+		margin-left: 20px;
+
+	}
+	.header-text {
+		margin-left: 90px;
+		font-size: 40px;
+	}
+	.header {
+		height: 70px;
+>>>>>>> e662a67bba9d20125432e90c975f7b3c6181a9af
 	}
 
 	.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  color: white;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  background-color: #780F8E;
-}
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  color: white;
+	  left: 0;
+	  padding: 1rem;
+	  text-align: center;
+	  background-color: #780F8E;
+	}
+<<<<<<< HEAD
+
+	.navbar-header {
+	 height: 100%;
+	}
+
+	.navbar-default {
+		border:none;
+		background-color: #780F8E;
+		
+		border: none;
+		-webkit-transition: background 0.3s ease-in-out;
+	    -moz-transition: background 0.3s ease-in-out;
+	    -o-transition: background 0.3s ease-in-out;
+	    transition: background 0.3s ease-in-out;
+
+	}
+
+
+
+	.navbar-default .navbar-nav>li>a {
+
+		font-size: 15px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: lighter;
+		color: white;
+		
+
+	}
+
+
+	.navbar-header {
+		height: 80px;
+	}
+
+
+	.navbar-brand {
+	   position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    text-align: center;
+	    margin: auto;
+	    height:30px;
+	}
+
+	.info {
+		font-size: 18px;
+	}
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    
+    color: white;
+=======
+	#h5 {
+		font-family: 'Montserrat', sans-serif;
+>>>>>>> e662a67bba9d20125432e90c975f7b3c6181a9af
+	}
 	
 </style>
 <body>
-	<div class="header text-center">
-		<p class="lead header-text">Enter Your Email Message Below</p>
+<<<<<<< HEAD
+	 <nav class="navbar header navbar-default " style="border-radius:0px; height:70px; margin-bottom: 0px;">
+
+      <div class="container">
+
+       
+        <div class="navbar-brand text-center">
+         <p class="lead header-text ">Enter Your Email Message Below</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-right" style="text-align:center; margin-top:20px;">
+            <li>
+
+            	  <a href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
+
+            	  </li>
+      
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </nav>
+
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+	
+=======
+	<div class="header">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="logo" src="bmake.png">
+			</div>
+			<div class="col-md-9">
+				<p class="lead header-text">Placeholder</p>
+			</div>
+		</div>
 	</div>
+>>>>>>> e662a67bba9d20125432e90c975f7b3c6181a9af
 	<div class="container-fluid">
 		<div class="row text-center">
-			<p>Enter your message into the textbox below and hit <i>ANALYZE</i> in order to create a tone summary</p>
-	
+			<p>Enter your message into the textbox below and hit analyze in order to create a tone summary</p>
 		</div>
 		<hr>
 		<div class="row">
@@ -138,36 +259,9 @@
 				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
-					<div class="row>">
-						<div class="col-md-6 text-center">
-							<h5>Emotion</h5>
-						</div>
-						<div class="col-md-6 text-center">
-							<h5>Language</h5>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
-<<<<<<< HEAD
-						<label> <strong>Anger</strong> </label>
-						<div class="progress">
-							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
-						</div>
-						<label> Disgust </label>
-						<div class="progress">
-							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
-						</div>
-						<label>Fear </label>
-						<div class="progress">
-							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
-						</div>
-						<label>Joy </label>
-						<div class="progress">
-							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
-						</div>
-						<label>Sadness </label>
-=======
 						<p>Anger</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
@@ -185,28 +279,12 @@
 							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
 						</div>
 						<p>Sadness</p>
->>>>>>> 6d0ee2e2ae7b58df7d8bd61ba09462a336acd5a5
 						<div class="progress">
 							<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
 						</div>
 						<% } %>
 					</div>
-<<<<<<< HEAD
-					<div class="col-md-6"
-					<% for(var i=2; i<languageArray.length; i++) {%>
-					<label><strong>Analytical</strong> </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
-					</div>
-					<label> Confidence</label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
-					</div>
-					<label>Tentative </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
-=======
-					<div class="col-md-6" style="margin-top: 36px">
+					<div class="col-md-6">
 						<% for(var i=2; i<languageArray.length; i++) {%>
 						<p>Analytical</p>
 						<div class="progress">
@@ -221,19 +299,16 @@
 							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
 						</div>
 						<% } %>
->>>>>>> 6d0ee2e2ae7b58df7d8bd61ba09462a336acd5a5
 					</div>
 
 				</div>
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
+	
 </div>
 <br>
 <br>
-<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
-=======
->>>>>>> 6d0ee2e2ae7b58df7d8bd61ba09462a336acd5a5
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> +  <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>

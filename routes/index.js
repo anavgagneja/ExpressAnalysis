@@ -21,22 +21,23 @@ router.get('/', function(req, res, next) {
 
 var array = Array.apply(null, Array(5)).map(Number.prototype.valueOf,0);
 var array2 = Array.apply(null, Array(3)).map(Number.prototype.valueOf,0);
-    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: []});
+var coeff = 0;
+    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: [], coeff: coeff});
 
 });
 
 
 var corsOptions = {
-  origin: /^[^.\s]+\.mixmax\.com$/,
-  credentials: true
+    origin: /^[^.\s]+\.mixmax\.com$/,
+    credentials: true
 };
 router.post('/resolver', cors(corsOptions), function(req, res, next) {
-  var data = JSON.parse(req.body.params);
-  var html = data.text;
-  res.json({
-    body: html,
-    raw: true
-  });
+    var data = JSON.parse(req.body.params);
+    var html = data.text;
+    res.json({
+        body: html,
+        raw: true
+    });
 });
 
 
@@ -44,6 +45,56 @@ router.post('/', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
+    coeff = 1.0;
+
+    function calculateCoefficient(languageArray, socialArray, ratio) {
+        //high emotional range + extraversion is HIGHLY impacts casualness
+        //high emotional range + conscientiousness, Analytical is HIGHLY impacts professionalism
+        //Agreeableness is medium impact on casualness
+        //Openness is a low impact on casualness
+
+        var high = 47.0
+        var analytical = languageArray[0].value;
+        var tentative = languageArray[2].value;
+        var openness = socialArray[0].value;
+        var conscientiousness = socialArray[1].value;
+        var extraversion = socialArray[2].value;
+        var agreeableness = socialArray[3].value;
+        var emotionalRange = socialArray[4].value * 3;
+
+        if(extraversion >= conscientiousness) {
+            //this is usually more casual
+            extraversion *= 3;
+        }
+        else {
+            //usuallly more formal
+            conscientiousness *= 3;
+        }
+
+        //extraversion *= 3;
+        //conscientiousness *= 3;
+        ratio *= 120;
+        tentative *= 4;
+        var valuesArray = [tentative, analytical, openness, conscientiousness, extraversion, agreeableness, emotionalRange, ratio];
+        var numArray = [];
+
+        valuesArray.forEach(function(num) {
+            if(num > 0) {
+                numArray.push(num);
+            }
+        })
+
+        var max = Math.max.apply(Math, numArray);
+        var min = Math.min.apply(Math, numArray);
+        numArray.forEach(function(num) {
+                num = (num - min)/(max - min) * 100;
+                coeff += num;
+        })
+
+        console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
+        coeff /= (numArray.length);
+        console.log("Coefficient: " + coeff);
+    };
 
     dictionary(function (err, dict) {
         if (err) {
@@ -87,14 +138,9 @@ router.post('/', function(req, res, next) {
     tone_analyzer.tone({ text: req.body.text },
 
         function(err, tone) {
-            console.log("There are " + numMisspelled + " misspelled words out of " + numWords + " words. Ratio: " + ratio);
             if (err)
             console.log(err);
             else {
-                console.log(JSON.stringify(tone, null, 2) + "\n\n\n");
-                var object = tone["document_tone"]["tone_categories"][0]["tones"][0]["tone_name"]
-                //console.log(JSON.stringify(object, null, 2));
-
                 var emotionArray = [];
                 var languageArray = [];
                 var socialArray = [];
@@ -138,7 +184,9 @@ router.post('/', function(req, res, next) {
                 socialArray.forEach(function(obj){
                     console.log(obj.name +  " - " + obj.value);
                 });
-                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords});
+
+                calculateCoefficient(languageArray, socialArray, ratio);
+                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords, coeff: coeff});
             }
         });
 

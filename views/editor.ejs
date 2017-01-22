@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bootstrap Theme Simply Me</title>
+	<title>MixMax Boilermake</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +13,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
 
 </head>
 <style>
@@ -71,6 +75,9 @@
 	.progress-language {
 
 	}
+	.header-text {
+		margin-top: 5px;
+	}
 
 	
 	.button {
@@ -94,7 +101,20 @@
 		background: white;
 		border-color: #780F8E;
 		border-width: 4px 4px 4px 4px;
-		color: white;
+		color: black;
+	}
+	.logo {
+		height: 60px;
+		margin-top: 6px;
+		margin-left: 20px;
+
+	}
+	.header-text {
+		margin-left: 90px;
+		font-size: 40px;
+	}
+	.header {
+		height: 70px;
 	}
 
 	.footer {
@@ -160,6 +180,18 @@
     
     color: white;
 	}
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  color: white;
+	  left: 0;
+	  padding: 1rem;
+	  text-align: center;
+	  background-color: #780F8E;
+	}
+	#h5 {
+		font-family: 'Montserrat', sans-serif;
+	}
 	
 </style>
 <body>
@@ -195,8 +227,7 @@ $(document).ready(function(){
 	
 	<div class="container-fluid">
 		<div class="row text-center">
-			<p>Enter your message into the textbox below and hit <i>ANALYZE</i> in order to create a tone summary</p>
-	
+			<p>Enter your message into the textbox below and hit analyze in order to create a tone summary</p>
 		</div>
 		<hr>
 		<div class="row">
@@ -218,14 +249,6 @@ $(document).ready(function(){
 				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
-					<div class="row>">
-						<div class="col-md-6 text-center">
-							<h5>Emotion</h5>
-						</div>
-						<div class="col-md-6 text-center">
-							<h5>Language</h5>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
@@ -251,7 +274,7 @@ $(document).ready(function(){
 						</div>
 						<% } %>
 					</div>
-					<div class="col-md-6" style="margin-top: 36px">
+					<div class="col-md-6">
 						<% for(var i=2; i<languageArray.length; i++) {%>
 						<p>Analytical</p>
 						<div class="progress">
