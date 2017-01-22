@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
- 	<!-- Mixmax SDK -->
-  	<script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
+	<!-- Mixmax SDK -->
+	<script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -54,7 +54,9 @@
 
 	}
 	.progress {
-		box-shadow: 0px 0px 10px #fff;
+		box-shadow: 0px 0px 5px #000
+		margin-top: -5px;
+		margin-bottom: 9px;
 	}
 	.panel {
 		background-color: #EEEEEE;
@@ -65,6 +67,9 @@
 	}
 	.progress-bar-sad {
 		background-color: #4A90E2;
+	}
+	.progress-language {
+
 	}
 
 	
@@ -126,56 +131,64 @@
 						<input type="button" value="Insert" class="button  js-insert" style="margin-top: 10px;"/>
 					</form>
 
-				
+
 				</div>
 			</div>
 			<div class="col-md-6">
 				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
+					<div class="row>">
+						<div class="col-md-6 text-center">
+							<h5>Emotion</h5>
+						</div>
+						<div class="col-md-6 text-center">
+							<h5>Language</h5>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
-						<label> <strong>Anger</strong> </label>
+						<p>Anger</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
 						</div>
-						<label> Disgust </label>
+						<p>Disgust</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
 						</div>
-						<label>Fear </label>
+						<p>Fear</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
 						</div>
-						<label>Joy </label>
+						<p>Joy</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
 						</div>
-						<label>Sadness </label>
+						<p>Sadness</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
 						</div>
 						<% } %>
 					</div>
-					<div class="col-md-6"
-					<% for(var i=2; i<languageArray.length; i++) {%>
-					<label><strong>Analytical</strong> </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
-					</div>
-					<label> Confidence</label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
-					</div>
-					<label>Tentative </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+					<div class="col-md-6" style="margin-top: 36px">
+						<% for(var i=2; i<languageArray.length; i++) {%>
+						<p>Analytical</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
+						</div>
+						<p>Confident</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
+						</div>
+						<p>Tentative</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+						</div>
+						<% } %>
 					</div>
 
-					<% } %>
 				</div>
-				
 			</div>
 		</div>
 	</div>
