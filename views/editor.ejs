@@ -34,7 +34,6 @@
 		background-color: #780F8E;
 		width: 100%;
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		box-shadow: rgba(0, 0, 0, 1) 0px 4px 4px;
 	}
 	.header-text {
 		padding-top: 10px;
@@ -124,13 +123,22 @@
 	}
 
 	.footer {
-		position: fixed;
+		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: -60px;
 		color: white;
 		left: 0;
 		padding: 1rem;
 		text-align: center;
+		background-color: #780F8E;
+	}
+
+	.navbar-header {
+		height: 100%;
+	}
+
+	.navbar-default {
+		border:none;
 		background-color: #780F8E;
 	}
 	#h5 {
@@ -144,27 +152,88 @@
 	.popover-content{
 		color: #fff !important;/*black color*/
 	}
+
+	.navbar .navbar-nav {
+		display: inline-block;
+		float: none;
+	}
+
+	.navbar .navbar-collapse {
+		text-align: center;
+	}
+
+	.info {
+		font-size: 16px;
+	}
 	.popover{
 		background: rgba(0,0,0,.85);
 	}
-	.popover.top .arrow:after { 
-		border-top-color: rgba(0,0,0,.85);
+
+
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+
+		color: white;
+		
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		color: white;
+		left: 0;
+		padding: 1rem;
+		text-align: center;
+		background-color: #780F8E;
 	}
 	.popover.bottom .arrow:after { 
 		border-bottom-color: rgba(0,0,0,.85);
 	}
+	.popover.top .arrow:after { 
+		border-top-color: rgba(0,0,0,.85);
+	}
+	#h5 {
+		font-family: 'Montserrat', sans-serif;
+	}
+	.logo {
+		height: 50px;
+	}
 </style>
 <body>
-	<div class="header">
-		<div class="row">
-			<div class="col-md-3">
+	<nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
+
+		<div class="container">
+
+
+			<div class="navbar-brand">
+
+
+
 				<img class="logo" src="bmake.png">
+
 			</div>
-			<div class="col-md-9">
-				<p class="lead header-text">Placeholder</p>
-			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<ul class="nav navbar-nav " style="text-align:center; margin-top:40px;">
+
+					<li><p style="font-size: 30px; color:white;">Placeholder</p></li> 
+					<li>
+
+						<a  href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
+
+					</li>
+
+				</ul>
+
+			</div><!--/.nav-collapse -->
 		</div>
-	</div>
+
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();   
+		});
+	</script>
+
 	<div class="container-fluid">
 		<div class="row text-center">
 			<p>Enter your message into the textbox below and hit analyze in order to create a tone summary</p>
@@ -266,6 +335,7 @@
 		$('[data-toggle="popover"]').popover();   
 	});
 </script>
+<script src="script.js"></script>
 <div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>

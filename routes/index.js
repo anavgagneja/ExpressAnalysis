@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 var cors = require('cors');
@@ -46,8 +45,7 @@ router.post('/', function(req, res, next) {
     var ratio = 0.0;
     var numWords = 0;
     var numMisspelled = 0;
-    coeff = 1.0;
-
+    coeff = 0;
     function calculateCoefficient(languageArray, socialArray, ratio) {
         //high emotional range + extraversion is HIGHLY impacts casualness
         //high emotional range + conscientiousness, Analytical is HIGHLY impacts professionalism
@@ -63,7 +61,7 @@ router.post('/', function(req, res, next) {
         var agreeableness = socialArray[3].value;
         var emotionalRange = socialArray[4].value * 3;
 
-        if(extraversion >= conscientiousness) {
+        if(extraversion - conscientiousness >= 30) {
             //this is usually more casual
             extraversion *= 3;
         }
@@ -72,9 +70,14 @@ router.post('/', function(req, res, next) {
             conscientiousness *= 3;
         }
 
+        if(emotionalRange >= high && analytical >= high && conscientiousness >= high) {
+                coeff += 20;
+        }
+
+
         //extraversion *= 3;
         //conscientiousness *= 3;
-        ratio *= 120;
+        ratio *= 1200;
         tentative *= 4;
         var valuesArray = [tentative, analytical, openness, conscientiousness, extraversion, agreeableness, emotionalRange, ratio];
         var numArray = [];
@@ -85,14 +88,17 @@ router.post('/', function(req, res, next) {
             }
         })
 
+        console.log("Start\n");
         var max = Math.max.apply(Math, numArray);
         var min = Math.min.apply(Math, numArray);
         numArray.forEach(function(num) {
                 num = (num - min)/(max - min) * 100;
+                console.log(num + "\n");
                 coeff += num;
         })
+        console.log("End\n");
 
-        console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
+        //console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
         coeff /= (numArray.length);
         
         if(coeff < 33 && coeff >= 0) {
@@ -139,7 +145,7 @@ router.post('/', function(req, res, next) {
         spell.add('a');
         spell.add('i');
         spell.add('I');
-        console.log(words);
+        //console.log(words);
 
         words.forEach(function(obj) {
             if(spell.correct(obj) == false) {
