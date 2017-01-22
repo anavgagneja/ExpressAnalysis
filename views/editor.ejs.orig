@@ -10,6 +10,7 @@
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="script.js"></script>
@@ -17,11 +18,16 @@
 <style>
 
 	.body {
-		background-color: #EEEEEE;
+		background-color: #a014be;
+		color: white;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
 	}
 	.header {
 		height: 50px;
-		background-color: red;
+		background-color: #780F8E;
+		width: 100%;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		box-shadow: rgba(0, 0, 0, 1) 0px 4px 4px;
 	}
 	.header-text {
 		padding-top: 10px;
@@ -31,16 +37,20 @@
 		padding-left: 40px;
 		padding-right: 40px;
 		padding-top: 20px;
-		background-color: #EEEEEE;
-		height: 100vh;
+		background-color: #a014be;
+		height: 100%;
+		color:white;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		font-weight: lighter;
 	}
 	hr {
 		border: 0;
 		clear:both;
 		display:block;
 		width: 76%;               
-		background-color:black;
+		background-color:white;
 		height: 1px;
+
 	}
 	.progress {
 		box-shadow: 0px 0px 10px #fff;
@@ -53,11 +63,44 @@
 		background-color: blueviolet;
 	}
 	.progress-bar-sad {
-		background-color: grey;
+		background-color: #4A90E2;
 	}
+
+	
+	.button {
+		border-radius:5px;
+		background-color: white;
+		color: #a014be;
+		border-color: rgba(160,20,190,0.35);
+		border-width: 0 0 2px 0;
+		width: 150px;
+		height: 40px;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		transition: all 150ms ease-in-out;
+	}
+	.button:hover {
+		background-color: rgba(98,12,116,0.97);
+		color: white;
+	}
+
+	
+	#email-text {
+		background: #C89BD2;
+		border-color: #780F8E;
+		border-width: 2px 2px 2px 2px;
+		 -webkit-box-shadow:inset 0px 0px 0px 3px #780F8E;
+    -moz-box-shadow:inset 0px 0px 0px 3px #780F8E;
+    box-shadow:inset 0px 0px 0px 3px #780F8E;
+    color: white;
+    padding-top:10px;
+    padding-left: 15px;
+
+
+	}
+	
 </style>
 <body>
-	<div class="row header text-center">
+	<div class="header text-center">
 		<p class="lead header-text">Enter Your Email Message Below</p>
 	</div>
 	<div class="container-fluid">
@@ -68,30 +111,24 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label>Message</label>
-<<<<<<< HEAD
+					<label style="font-size: 16px;">Message</label>
 					<form method="post" action="/" class="text-center myForm">
-						<textarea class="form-control" id="textArea" name="text" id="email-text" value="fgfjgjhk" style="height:400px"><%= text %></textarea>
-						<br>
-						<input type="submit" id="submit" value="Submit" class="btn-primary" style="width:200px"/>
+<<<<<<< HEAD
+						<textarea class="form-control" name="text" id="email-text" value="text" style="height:400px;"><%= text %></textarea>
 =======
-					<form method="post" action="/add" class="text-center">
-						<textarea class="form-control" name="txt" id="email-text" style="height:400px"></textarea>
+						<textarea class="form-control" name="text" id="email-text" value="<%= text %>" style="height:400px"><%= text %></textarea>
+>>>>>>> cf4d07e6f196e7b4d269c08385ce94a11dc0bd2d
 						<br>
-						<input type="submit" value="Analyze" class="btn-primary" style="width:200px"/>
-						<input type="button" value="Insert" class="btn-primary  js-insert" style="width:200px"/>
->>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
+						<input type="submit" value="Analyze" class="button submit" />
+
+						<input type="button" value="Insert" class="button  js-insert" style="margin-top: 10px;"/>
 					</form>
 
-					<script type="text/javascript">
-
-					
-				</script>
-
+				
 				</div>
 			</div>
 			<div class="col-md-6">
-				<label>Analysis</label>
+				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
 					<div class="row">
@@ -140,13 +177,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-	</body>
-
-	
-
-=======
 </div>
 </body>
->>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
 </html>
