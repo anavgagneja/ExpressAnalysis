@@ -10,8 +10,8 @@ var nspell = require('nspell');
 var watson = require('watson-developer-cloud');
 
 var tone_analyzer = new watson.ToneAnalyzerV3({
-    username: 'cdedd54c-683f-4e0a-848c-262a02f354e8',
-    password: 'ypYZZkbvj6bc',
+    username: '2b2e03d0-4113-4f91-99dc-ffe711238793',
+    password: 'LLXFjSjiuSWZ',
     version: 'v3',
     version_date: '2016-05-19 '
 });
