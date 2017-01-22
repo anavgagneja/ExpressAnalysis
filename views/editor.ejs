@@ -13,7 +13,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="script.js"></script>
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+
 </head>
 <style>
 
@@ -37,6 +41,7 @@
 		padding-left: 40px;
 		padding-right: 40px;
 		padding-top: 20px;
+		padding-bottom: 50px;
 		background-color: #a014be;
 		height: 100%;
 		color:white;
@@ -101,6 +106,7 @@
 	.logo {
 		height: 60px;
 		margin-top: 6px;
+		margin-left: 20px;
 
 	}
 	.header-text {
@@ -109,6 +115,20 @@
 	}
 	.header {
 		height: 70px;
+	}
+
+	.footer {
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  color: white;
+	  left: 0;
+	  padding: 1rem;
+	  text-align: center;
+	  background-color: #780F8E;
+	}
+	#h5 {
+		font-family: 'Montserrat', sans-serif;
 	}
 	
 </style>
@@ -147,14 +167,6 @@
 				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
-					<div class="row>">
-						<div class="col-md-6 text-center">
-							<h5>Emotion</h5>
-						</div>
-						<div class="col-md-6 text-center">
-							<h5>Language</h5>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
@@ -180,7 +192,7 @@
 						</div>
 						<% } %>
 					</div>
-					<div class="col-md-6" style="margin-top: 36px">
+					<div class="col-md-6">
 						<% for(var i=2; i<languageArray.length; i++) {%>
 						<p>Analytical</p>
 						<div class="progress">
@@ -201,5 +213,9 @@
 			</div>
 		</div>
 	</div>
+</div>
+<br>
+<br>
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>
