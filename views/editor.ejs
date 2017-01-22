@@ -10,12 +10,16 @@
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.js"></script>
 
 	<!--ProgressJS-->
 	<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
@@ -63,6 +67,7 @@
 		box-shadow: 0px 0px 5px #000
 		margin-top: -5px;
 		margin-bottom: 9px;
+
 	}
 	.panel {
 		background-color: #EEEEEE;
@@ -71,6 +76,13 @@
 	.progress-bar-fear {
 		background-color: blueviolet;
 	}
+
+	.progress-bar-danger {
+		background-color: #D91E18;
+
+	}
+
+
 	.progress-bar-sad {
 		background-color: #4A90E2;
 	}
@@ -125,7 +137,7 @@
 	.footer {
 		position: absolute;
 		right: 0;
-		bottom: -60px;
+		bottom: -50px;
 		color: white;
 		left: 0;
 		padding: 1rem;
@@ -138,8 +150,10 @@
 	}
 
 	.navbar-default {
+
 		border:none;
 		background-color: #780F8E;
+
 	}
 	#h5 {
 		font-family: 'Montserrat', sans-serif;
@@ -163,39 +177,39 @@
 	}
 
 	.info {
-		font-size: 16px;
+		
+		margin-top: -7px;
+		color:white;
 	}
+
 	.popover{
 		background: rgba(0,0,0,.85);
 	}
-
-
-
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-
-		color: white;
-		
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		color: white;
-		left: 0;
-		padding: 1rem;
-		text-align: center;
-		background-color: #780F8E;
-	}
+	
 	.popover.bottom .arrow:after { 
-		border-bottom-color: rgba(0,0,0,.85);
+		border-bottom-color: (0,0,0,.85);
 	}
 	.popover.top .arrow:after { 
 		border-top-color: rgba(0,0,0,.85);
 	}
+
+	.popover.bottom {
+		margin-top: -10px;
+		text-align: center;
+	}
+
 	#h5 {
 		font-family: 'Montserrat', sans-serif;
 	}
+
 	.logo {
+		margin-left: 0px;
 		height: 50px;
 	}
+
+	
+
+
 </style>
 <body>
 	<nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
@@ -214,11 +228,12 @@
 
 				<ul class="nav navbar-nav " style="text-align:center; margin-top:40px;">
 
-					<li><p style="font-size: 30px; color:white;">Placeholder</p></li> 
+					<li><p style="font-size: 30px; color:white; font-weight: 100;"><strong>express</strong>://Analysis</p></li> 
+					
 					<li>
 
-						<a  href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
-
+						<a href="#" title="About" data-toggle="popover" data-placement="bottom" data-content="Content"><div><p class="fa fa-info-circle info fa-2x" aria-hidden="true"></p></div></a>
+						
 					</li>
 
 				</ul>
@@ -331,6 +346,20 @@
 					</div>
 				</div>
 			</div>
+
+			<script>
+
+			if(<%= emotionArray[0].value%> > 50 && <%= socialArray[1].value%> < 40) {
+				swal({
+				  title: "Don't be a bully!",
+				  text: "Your email seems like it will be used to bully someone.",
+				  type: "warning",
+				  confirmButtonColor: "#780F8E",
+				  confirmButtonText: "OK",
+				});
+			}
+			</script>
+
 		</div>
 	</div>
 </div>
