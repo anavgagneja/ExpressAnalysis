@@ -102,10 +102,10 @@ router.post('/', function(req, res, next) {
         coeff /= (numArray.length);
         
         if(coeff < 33 && coeff >= 0) {
-            color = 'red';
+            color = '#CF000F';
         }
         if(coeff >= 33 && coeff < 66) {
-            color = 'yellow';
+            color = '#f1c40f';
         }
         if(coeff >= 66 && coeff <= 100) {
             color = 'green';
