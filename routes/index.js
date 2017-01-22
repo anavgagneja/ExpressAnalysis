@@ -19,7 +19,9 @@ var tone_analyzer = new watson.ToneAnalyzerV3({
 
 router.get('/', function(req, res, next) {
 
-    res.render('editor', { text: "", emotionArray: [],languageArray: [], socialArray: []});
+var array = Array.apply(null, Array(5)).map(Number.prototype.valueOf,0);
+var array2 = Array.apply(null, Array(3)).map(Number.prototype.valueOf,0);
+    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: []});
 
 });
 

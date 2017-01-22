@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="script.js"></script>
+
 </head>
 <style>
 
@@ -37,6 +37,7 @@
 		padding-left: 40px;
 		padding-right: 40px;
 		padding-top: 20px;
+		padding-bottom: 50px;
 		background-color: #a014be;
 		height: 100%;
 		color:white;
@@ -90,6 +91,17 @@
 		border-width: 3px 3px 3px 3px;
 		color: white;
 	}
+
+	.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: white;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #780F8E;
+}
 	
 </style>
 <body>
@@ -99,6 +111,7 @@
 	<div class="container-fluid">
 		<div class="row text-center">
 			<p>Enter your message into the textbox below and hit <i>ANALYZE</i> in order to create a tone summary</p>
+	
 		</div>
 		<hr>
 		<div class="row">
@@ -123,23 +136,23 @@
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
-						<label><%= emotionArray[0].name %> </label>
+						<label> <strong>Anger</strong> </label>
 						<div class="progress">
 							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
 						</div>
-						<label><%= emotionArray[1].name %> </label>
+						<label> Disgust </label>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
 						</div>
-						<label><%= emotionArray[2].name %> </label>
+						<label>Fear </label>
 						<div class="progress">
 							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
 						</div>
-						<label><%= emotionArray[3].name %> </label>
+						<label>Joy </label>
 						<div class="progress">
 							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
 						</div>
-						<label><%= emotionArray[4].name %> </label>
+						<label>Sadness </label>
 						<div class="progress">
 							<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
 						</div>
@@ -147,15 +160,15 @@
 					</div>
 					<div class="col-md-6"
 					<% for(var i=2; i<languageArray.length; i++) {%>
-					<label><%= languageArray[0].name %> </label>
+					<label><strong>Analytical</strong> </label>
 					<div class="progress">
 						<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
 					</div>
-					<label><%= languageArray[1].name %> </label>
+					<label> Confidence</label>
 					<div class="progress">
 						<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
 					</div>
-					<label><%= languageArray[2].name %> </label>
+					<label>Tentative </label>
 					<div class="progress">
 						<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
 					</div>
@@ -167,5 +180,8 @@
 		</div>
 	</div>
 </div>
+<br>
+<br>
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>
