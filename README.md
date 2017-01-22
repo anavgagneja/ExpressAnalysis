@@ -7,4 +7,4 @@ This application is currently live and can be run without MixMax at: https://obs
 Our Stack: node.js, Express, Embedded JavaScript (EJS)
 APIs Used: IBM Watson Tone Analyzer, Nspell, MixMax
 
-
+![screenshot](https://cloud.githubusercontent.com/assets/7967717/22181685/015a2566-e05f-11e6-9f63-615c9935400e.png)
