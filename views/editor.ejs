@@ -23,11 +23,11 @@
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
 	}
 	.header {
-		height: 50px;
+		
 		background-color: #780F8E;
 		width: 100%;
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		box-shadow: rgba(0, 0, 0, 1) 0px 4px 4px;
+		
 	}
 	.header-text {
 		padding-top: 10px;
@@ -91,28 +91,108 @@
 
 	
 	#email-text {
-		background: #C89BD2;
+		background: white;
 		border-color: #780F8E;
-		border-width: 3px 3px 3px 3px;
+		border-width: 4px 4px 4px 4px;
 		color: white;
 	}
 
 	.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  color: white;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  background-color: #780F8E;
-}
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  color: white;
+	  left: 0;
+	  padding: 1rem;
+	  text-align: center;
+	  background-color: #780F8E;
+	}
+
+	.navbar-header {
+	 height: 100%;
+	}
+
+	.navbar-default {
+		border:none;
+		background-color: #780F8E;
+		
+		border: none;
+		-webkit-transition: background 0.3s ease-in-out;
+	    -moz-transition: background 0.3s ease-in-out;
+	    -o-transition: background 0.3s ease-in-out;
+	    transition: background 0.3s ease-in-out;
+
+	}
+
+
+
+	.navbar-default .navbar-nav>li>a {
+
+		font-size: 15px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: lighter;
+		color: white;
+		
+
+	}
+
+
+	.navbar-header {
+		height: 80px;
+	}
+
+
+	.navbar-brand {
+	   position: absolute;
+	    width: 100%;
+	    left: 0;
+	    top: 0;
+	    text-align: center;
+	    margin: auto;
+	    height:30px;
+	}
+
+	.info {
+		font-size: 18px;
+	}
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    
+    color: white;
+	}
 	
 </style>
 <body>
-	<div class="header text-center">
-		<p class="lead header-text">Enter Your Email Message Below</p>
-	</div>
+	 <nav class="navbar header navbar-default " style="border-radius:0px; height:70px; margin-bottom: 0px;">
+
+      <div class="container">
+
+       
+        <div class="navbar-brand text-center">
+         <p class="lead header-text ">Enter Your Email Message Below</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-right" style="text-align:center; margin-top:20px;">
+            <li>
+
+            	  <a href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
+
+            	  </li>
+      
+          </ul>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </nav>
+
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+	
 	<div class="container-fluid">
 		<div class="row text-center">
 			<p>Enter your message into the textbox below and hit <i>ANALYZE</i> in order to create a tone summary</p>
@@ -192,9 +272,10 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 <br>
 <br>
-<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> +  <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>
