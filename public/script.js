@@ -2,11 +2,16 @@ $(() => {
 	$('.js-insert').click((e) => {
 		e.preventDefault();
 
-		console.log('inserting',$('#email-text').val())
-		debugger
-
 		Mixmax.done({
 			text: $('#email-text').val()
 		});
 	});
 })
+		
+		
+var isMixmax = !!window.opener;
+console.log(isMixmax);	
+		if(!isMixmax) {
+
+			$(".js-insert").hide();
+		}

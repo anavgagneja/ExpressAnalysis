@@ -21,20 +21,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.js"></script>
 
+	<!--ProgressJS-->
+	<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+
+
 </head>
 <style>
-
 	.body {
 		background-color: #a014be;
 		color: white;
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
 	}
 	.header {
-		
+		height: 50px;
 		background-color: #780F8E;
 		width: 100%;
 		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		
 	}
 	.header-text {
 		padding-top: 10px;
@@ -74,6 +77,9 @@
 	}
 	.progress-bar-sad {
 		background-color: #4A90E2;
+	}
+	.progress-bar-tent {
+		background-color: grey;
 	}
 	.progress-language {
 
@@ -121,88 +127,72 @@
 	}
 
 	.footer {
-	  position: absolute;
-	  right: 0;
-	  bottom: -60px;
-	  color: white;
-	  left: 0;
-	  padding: 1rem;
-	  text-align: center;
-	  background-color: #780F8E;
+		position: absolute;
+		right: 0;
+		bottom: -60px;
+		color: white;
+		left: 0;
+		padding: 1rem;
+		text-align: center;
+		background-color: #780F8E;
 	}
 
 	.navbar-header {
-	 height: 100%;
+		height: 100%;
 	}
 
 	.navbar-default {
 		border:none;
 		background-color: #780F8E;
-		
-		border: none;
-		-webkit-transition: background 0.3s ease-in-out;
-	    -moz-transition: background 0.3s ease-in-out;
-	    -o-transition: background 0.3s ease-in-out;
-	    transition: background 0.3s ease-in-out;
-
+	}
+	#h5 {
+		font-family: 'Montserrat', sans-serif;
+	}
+	.progress > svg {
+		height: 100%;
+		display: block;
 	}
 
-
-
-	.navbar-default .navbar-nav>li>a {
-
-		font-size: 15px;
-		font-family: 'Roboto', sans-serif;
-		font-weight: lighter;
-		color: white;
-		
-
-	}
-
-
-	.navbar-header {
-		height: 80px;
-	}
-
-
-	.navbar-brand {
-	   position: absolute;
-	    width: 100%;
-	    left: 0;
-	    top: 0;
-	    text-align: center;
-	    margin: auto;
-	    height:30px;
+	.popover-content{
+		color: #fff !important;/*black color*/
 	}
 
 	.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-}
+		display: inline-block;
+		float: none;
+	}
 
-.navbar .navbar-collapse {
-    text-align: center;
-}
+	.navbar .navbar-collapse {
+		text-align: center;
+	}
 
 	.info {
 		font-size: 16px;
-		
+	}
+	.popover{
+		background: rgba(0,0,0,.85);
 	}
 
 
 
 	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    
-    color: white;
-	
-	  position: fixed;
-	  right: 0;
-	  bottom: 0;
-	  color: white;
-	  left: 0;
-	  padding: 1rem;
-	  text-align: center;
-	  background-color: #780F8E;
+
+		color: white;
+		
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		color: white;
+		left: 0;
+		padding: 1rem;
+		text-align: center;
+		background-color: #780F8E;
+	}
+	.popover.bottom .arrow:after { 
+		border-bottom-color: rgba(0,0,0,.85);
+	}
+	.popover.top .arrow:after { 
+		border-top-color: rgba(0,0,0,.85);
 	}
 	#h5 {
 		font-family: 'Montserrat', sans-serif;
@@ -214,42 +204,48 @@
 
 </style>
 <body>
-	 <nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
+	<nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
 
-      <div class="container">
-
-       
-        <div class="navbar-brand">
+		<div class="container">
 
 
+			<div class="navbar-brand">
 
-        <img class="logo" src="bmake.png">
-         
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
 
-          <ul class="nav navbar-nav " style="text-align:center; margin-top:40px;">
 
-          <li><p style="font-size: 30px; color:white;">Placeholder</p></li> 
-            <li>
+				<img class="logo" src="bmake.png">
 
-            	  <a  href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
 
-            	  </li>
-      
-          </ul>
-         
-        </div><!--/.nav-collapse -->
-      </div>
+				<ul class="nav navbar-nav " style="text-align:center; margin-top:40px;">
 
-    </nav>
+					<li><p style="font-size: 30px; color:white;">Placeholder</p></li> 
+					<li>
 
-    <script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
-});
-</script>
-	
+						<a  href="#" data-toggle="popover" data-placement="bottom" title="About" data-content="Dank ass app 4 mix max yoasdsaadsadsaasdsasa a dasd sad sd sa dad ad sd sad  sa dsa da das das "><p class="glyphicon glyphicon-info-sign info"></p></a>
+
+					</li>
+
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div>
+
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();   
+		});
+		var isMixmax = !!window.opener;
+		if(isMixmax) {
+
+			$(".js-insert").hide();
+			console.log(isMixmax);
+		}
+	</script>
+
 	<div class="container-fluid">
 		<div class="row text-center">
 			<p>Enter your message into the textbox below and hit analyze in order to create a tone summary</p>
@@ -262,9 +258,9 @@ $(document).ready(function(){
 					<form method="post" action="/" class="text-center myForm">
 						<textarea class="form-control" name="text" id="email-text" value="text" style="height:400px;"><%= text %></textarea>
 						<br>
-						<input type="submit" value="Analyze" class="button submit" />
+						<input type="submit" value="Analyze" class="button submit" data-toggle="popover" data-placement="top" data-content="Content"/>
 
-						<input type="button" value="Insert" class="button  js-insert" style="margin-top: 10px;"/>
+						<input type="button" value="Insert" class="button js-insert" style="margin-top: 10px;" data-toggle="popover" data-placement="top" data-content="Content"/>
 					</form>
 
 
@@ -275,47 +271,70 @@ $(document).ready(function(){
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
 					<div class="row">
-						<div class="col-md-6"
-						<% for(var i=4; i<emotionArray.length; i++) {%>
-						<p>Anger</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-danger progress-bar-striped active anger" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
+						<div class="col-md-12">
+							<div class="col-md-6"
+							<% for(var i=4; i<emotionArray.length; i++) {%>
+							<p>Anger</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Anger: Evoked due to injustice, conflict, humiliation, negligence or betrayal. If anger is active, the individual attacks the target, verbally or physically.">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
+							</div>
+							<p>Disgust</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Disgust: An emotional response of revulsion to something considered offensive or unpleasant. It is a sensation that refers to something revolting.">
+								<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
+							</div>
+							<p>Fear</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Fear: A response to impending danger. It is a survival mechanism that is a reaction to some negative stimulus. It may be a mild caution or an extreme phobia.">
+								<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
+							</div>
+							<p>Joy</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Joy: Joy or happiness has shades of enjoyment, satisfaction and pleasure. There is a sense of well-being, inner peace, love, safety and contentment.">
+								<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
+							</div>
+							<p>Sadness</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Sadness: Indicates a feeling of loss and disadvantage. When a person can be observed to be quiet, less energetic and withdrawn, it may be inferred that sadness exists.">
+								<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
+							</div>
+							<% } %>
 						</div>
-						<p>Disgust</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
+						<div class="col-md-6">
+							<% for(var i=2; i<languageArray.length; i++) {%>
+							<p>Analytical</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Analytical: A person's reasoning and analytical attitude about things.">
+								<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
+							</div>
+							<p>Confident</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Confident: A person's degree of certainty.">
+								<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
+							</div>
+							<p>Tentative</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Tentative: A person's degree of inhibition.">
+								<div class="progress-bar progress-bar-tent progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+							</div>
+							<% } %>
+							<% for(var i=4; i<socialArray.length; i++) {%>
+							<p>Conscientious</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Conscientiousness: The tendency to act in an organized or thoughtful way.">
+								<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=socialArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=socialArray[1].value%>%'></div>
+							</div>
+							<p>Agreeable</p>
+							<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Agreeableness: The tendency to be compassionate and cooperative towards others.">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=socialArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=socialArray[3].value%>%'></div>
+							</div>
+							<% } %>
 						</div>
-						<p>Fear</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
-						</div>
-						<p>Joy</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
-						</div>
-						<p>Sadness</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
-						</div>
-						<% } %>
 					</div>
-					<div class="col-md-6">
-						<% for(var i=2; i<languageArray.length; i++) {%>
-						<p>Analytical</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
+					<div class="col-md-12">
+						<br>
+						<br>
+						<style> 
+							.result {
+								background-color: <%=color%>;
+							}
+						</style>
+						<div class="progress" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Content">
+							<div class="progress-bar progress-bar-success progress-bar-striped active result" role="progressbar" aria-valuenow='<%=coeff%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=coeff%>%'></div>
 						</div>
-						<p>Confident</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
-						</div>
-						<p>Tentative</p>
-						<div class="progress">
-							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
-						</div>
-						<% } %>
 					</div>
-
 				</div>
 			</div>
 
@@ -334,10 +353,15 @@ $(document).ready(function(){
 
 		</div>
 	</div>
-	
 </div>
 <br>
 <br>
-<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> +  <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
+<script>
+	$(document).ready(function(){
+		$('[data-toggle="popover"]').popover();   
+	});
+</script>
+<script src="script.js"></script>
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
 </html>

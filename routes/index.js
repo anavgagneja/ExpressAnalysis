@@ -17,11 +17,12 @@ var tone_analyzer = new watson.ToneAnalyzerV3({
 });
 
 router.get('/', function(req, res, next) {
-
+var color = 'white';
 var array = Array.apply(null, Array(5)).map(Number.prototype.valueOf,0);
 var array2 = Array.apply(null, Array(3)).map(Number.prototype.valueOf,0);
+var array3= Array.apply(null, Array(5)).map(Number.prototype.valueOf,0);
 var coeff = 0;
-    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: [], coeff: coeff});
+    res.render('editor', { text: "", emotionArray: array,languageArray: array2, socialArray: array3, coeff: coeff, color: color});
 
 });
 
@@ -99,6 +100,20 @@ router.post('/', function(req, res, next) {
 
         //console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
         coeff /= (numArray.length);
+        
+        if(coeff < 33 && coeff >= 0) {
+            color = 'red';
+        }
+        if(coeff >= 33 && coeff < 66) {
+            color = 'yellow';
+        }
+        if(coeff >= 66 && coeff <= 100) {
+            color = 'green';
+        }
+        if(coeff > 100) {
+            color = 'green';
+            coeff = 100;
+        }
         console.log("Coefficient: " + coeff);
     };
 
@@ -192,7 +207,7 @@ router.post('/', function(req, res, next) {
                 });
 
                 calculateCoefficient(languageArray, socialArray, ratio);
-                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords, coeff: coeff});
+                res.render('editor', { text: req.body.text, emotionArray: emotionArray,languageArray: languageArray, socialArray: socialArray, numMisspelled: numMisspelled,ratio: ratio, numWords: numWords, coeff: coeff, color: color});
             }
         });
 
