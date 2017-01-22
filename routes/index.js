@@ -102,7 +102,7 @@ router.post('/', function(req, res, next) {
         //console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
         coeff /= (numArray.length);
 */
-        coeff = openness + conscientiousness + agreeableness + Math.abs(emotionalRange - 50) + confidence - tentative;
+        coeff = openness + conscientiousness + agreeableness - tentative - extraversion;
         if(coeff < 33 && coeff >= 0) {
             color = '#CF000F';
         }
