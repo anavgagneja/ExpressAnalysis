@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bootstrap Theme Simply Me</title>
+	<title>MixMax Boilermake</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
- 	<!-- Mixmax SDK -->
-  	<script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
+	<!-- Mixmax SDK -->
+	<script defer src="https://d1xa36cy0xt122.cloudfront.net/v1/Mixmax.js"></script>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="script.js"></script>
+
 </head>
 <style>
 
 	.body {
-		background-color: #EEEEEE;
+		background-color: #a014be;
+		color: white;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
 	}
 	.header {
 		height: 50px;
-		background-color: red;
+		background-color: #780F8E;
+		width: 100%;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		box-shadow: rgba(0, 0, 0, 1) 0px 4px 4px;
 	}
 	.header-text {
 		padding-top: 10px;
@@ -31,19 +37,26 @@
 		padding-left: 40px;
 		padding-right: 40px;
 		padding-top: 20px;
-		background-color: #EEEEEE;
-		height: 100vh;
+		padding-bottom: 50px;
+		background-color: #a014be;
+		height: 100%;
+		color:white;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		font-weight: lighter;
 	}
 	hr {
 		border: 0;
 		clear:both;
 		display:block;
 		width: 76%;               
-		background-color:black;
+		background-color:white;
 		height: 1px;
+
 	}
 	.progress {
-		box-shadow: 0px 0px 10px #fff;
+		box-shadow: 0px 0px 5px #000
+		margin-top: -5px;
+		margin-bottom: 9px;
 	}
 	.panel {
 		background-color: #EEEEEE;
@@ -53,100 +66,164 @@
 		background-color: blueviolet;
 	}
 	.progress-bar-sad {
-		background-color: grey;
+		background-color: #4A90E2;
 	}
+	.progress-language {
+
+	}
+	.header-text {
+		margin-top: 5px;
+	}
+
+	
+	.button {
+		border-radius:5px;
+		background-color: white;
+		color: #a014be;
+		border-color: rgba(160,20,190,0.35);
+		border-width: 0 0 2px 0;
+		width: 150px;
+		height: 40px;
+		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
+		transition: all 150ms ease-in-out;
+	}
+	.button:hover {
+		background-color: rgba(98,12,116,0.97);
+		color: white;
+	}
+
+	
+	#email-text {
+		background: #C89BD2;
+		border-color: #780F8E;
+		border-width: 3px 3px 3px 3px;
+		color: white;
+	}
+<<<<<<< HEAD
+	.logo {
+		height: 60px;
+		margin-top: 6px;
+
+	}
+	.header-text {
+		margin-left: 90px;
+		font-size: 40px;
+	}
+	.header {
+		height: 70px;
+	}
+=======
+
+	.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  color: white;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #780F8E;
+}
+>>>>>>> 19a9c45a02a42c70c4559d0f63830816b7a8c14a
+	
 </style>
 <body>
-	<div class="row header text-center">
-		<p class="lead header-text">Enter Your Email Message Below</p>
+	<div class="header">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="logo" src="bmake.png">
+			</div>
+			<div class="col-md-9">
+				<p class="lead header-text">Placeholder</p>
+			</div>
+		</div>
 	</div>
 	<div class="container-fluid">
 		<div class="row text-center">
+<<<<<<< HEAD
+			<p>Enter your message into the textbox below and hit analyze in order to create a tone summary</p>
+=======
 			<p>Enter your message into the textbox below and hit <i>ANALYZE</i> in order to create a tone summary</p>
+	
+>>>>>>> 19a9c45a02a42c70c4559d0f63830816b7a8c14a
 		</div>
 		<hr>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label>Message</label>
-<<<<<<< HEAD
+					<label style="font-size: 16px;">Message</label>
 					<form method="post" action="/" class="text-center myForm">
-						<textarea class="form-control" id="textArea" name="text" id="email-text" value="fgfjgjhk" style="height:400px"><%= text %></textarea>
+						<textarea class="form-control" name="text" id="email-text" value="text" style="height:400px;"><%= text %></textarea>
 						<br>
-						<input type="submit" id="submit" value="Submit" class="btn-primary" style="width:200px"/>
-=======
-					<form method="post" action="/add" class="text-center">
-						<textarea class="form-control" name="txt" id="email-text" style="height:400px"></textarea>
-						<br>
-						<input type="submit" value="Analyze" class="btn-primary" style="width:200px"/>
-						<input type="button" value="Insert" class="btn-primary  js-insert" style="width:200px"/>
->>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
+						<input type="submit" value="Analyze" class="button submit" />
+
+						<input type="button" value="Insert" class="button  js-insert" style="margin-top: 10px;"/>
 					</form>
 
-					<script type="text/javascript">
-
-					
-				</script>
 
 				</div>
 			</div>
 			<div class="col-md-6">
-				<label>Analysis</label>
+				<label style="font-size: 16px;">Analysis</label>
 				<!--<div class="panel panel-default" style="height:450px">
 				<div class="panel-body">-->
+					<div class="row>">
+						<div class="col-md-6 text-center">
+							<h5>Emotion</h5>
+						</div>
+						<div class="col-md-6 text-center">
+							<h5>Language</h5>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-6"
 						<% for(var i=4; i<emotionArray.length; i++) {%>
-						<label><%= emotionArray[0].name %> </label>
+						<p>Anger</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[0].value%>%'></div>
 						</div>
-						<label><%= emotionArray[1].name %> </label>
+						<p>Disgust</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[1].value%>%'></div>
 						</div>
-						<label><%= emotionArray[2].name %> </label>
+						<p>Fear</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[2].value%>%'></div>
 						</div>
-						<label><%= emotionArray[3].name %> </label>
+						<p>Joy</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[3].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[3].value%>%'></div>
 						</div>
-						<label><%= emotionArray[4].name %> </label>
+						<p>Sadness</p>
 						<div class="progress">
 							<div class="progress-bar progress-bar-sad progress-bar-striped active" role="progressbar" aria-valuenow='<%=emotionArray[4].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=emotionArray[4].value%>%'></div>
 						</div>
 						<% } %>
 					</div>
-					<div class="col-md-6"
-					<% for(var i=2; i<languageArray.length; i++) {%>
-					<label><%= languageArray[0].name %> </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
-					</div>
-					<label><%= languageArray[1].name %> </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
-					</div>
-					<label><%= languageArray[2].name %> </label>
-					<div class="progress">
-						<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+					<div class="col-md-6" style="margin-top: 36px">
+						<% for(var i=2; i<languageArray.length; i++) {%>
+						<p>Analytical</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[0].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[0].value%>%'></div>
+						</div>
+						<p>Confident</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[1].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[1].value%>%'></div>
+						</div>
+						<p>Tentative</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-fear progress-bar-striped active" role="progressbar" aria-valuenow='<%=languageArray[2].value%>' aria-valuemin="0" aria-valuemax="100" style='width:<%=languageArray[2].value%>%'></div>
+						</div>
+						<% } %>
 					</div>
 
-					<% } %>
 				</div>
-				
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-	</body>
-
-	
-
-=======
 </div>
+<br>
+<br>
+<div class="footer">Made with &nbsp;<span><img style="height:15px;margin-bottom:5px;" src="heart.png"></span> &nbsp;and &nbsp; <span><img style="height:17px;margin-bottom:5px;" src="js.png"></span> &nbsp;at BoilerMake 2017.</div>
 </body>
->>>>>>> 0d776ec13f53f0ca3398ad0d2aa981c477a60586
 </html>
