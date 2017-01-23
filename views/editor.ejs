@@ -18,223 +18,17 @@
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.3.2/sweetalert2.min.js"></script>
 
 	<!--ProgressJS-->
 	<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
 
+	<!--Stylesheet-->
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
 </head>
-<style>
-	body {
-		background-color: #a014be;
-		color: white;
-		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		font-size: 15px;
-	}
-	.header {
-		height: 50px;
-		background-color: #780F8E;
-		width: 100%;
-		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-	}
-	.header-text {
-		padding-top: 10px;
-		color: white;
-	}
-	.container-fluid {
-		padding-left: 40px;
-		padding-right: 40px;
-		padding-top: 20px;
-		padding-bottom: 50px;
-		background-color: #a014be;
-		height: 100%;
-		color:white;
-		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		font-weight: lighter;
-	}
-	hr {
-		border: 0;
-		clear:both;
-		display:block;
-		width: 76%;               
-		background-color:white;
-		height: 1px;
-
-	}
-	.progress {
-		box-shadow: 0px 0px 5px #000
-		margin-top: -5px;
-		margin-bottom: 9px;
-
-	}
-	.panel {
-		background-color: #EEEEEE;
-		border: 0px;
-	}
-	.progress-bar-fear {
-		background-color: blueviolet;
-	}
-
-	.progress-bar-danger {
-		background-color: #D91E18;
-
-	}
-
-
-	.progress-bar-sad {
-		background-color: #4A90E2;
-	}
-	.progress-bar-tent {
-		background-color: grey;
-	}
-	.progress-language {
-
-	}
-	.header-text {
-		margin-top: 5px;
-	}
-
-	
-	.button {
-		border-radius:5px;
-		background-color: white;
-		color: #a014be;
-		border-color: rgba(160,20,190,0.35);
-		border-width: 0 0 2px 0;
-		width: 150px;
-		height: 40px;
-		font-family: 'Roboto', 'Helvetica Neue', 'Trebuchet MS', 'Segoe', Helvetica, Arial, sans-serif;
-		transition: all 150ms ease-in-out;
-	}
-	.button:hover {
-		background-color: rgba(98,12,116,0.97);
-		color: white;
-	}
-
-	
-	#email-text {
-		background: white;
-		border-color: #780F8E;
-		border-width: 4px 4px 4px 4px;
-		color: black;
-	}
-	.logo {
-		height: 60px;
-		margin-top: 6px;
-		margin-left: 20px;
-
-	}
-	.header-text {
-		margin-left: 90px;
-		font-size: 40px;
-	}
-	.header {
-		height: 70px;
-	}
-
-	.footer {
-		position: absolute;
-		right: 0;
-		bottom: 0px;
-		color: white;
-		left: 0;
-		padding: 1rem;
-		text-align: center;
-		background-color: #780F8E;
-	}
-
-	.navbar-header {
-		height: 100%;
-	}
-
-	.navbar-default {
-
-		border:none;
-		background-color: #780F8E;
-
-	}
-	#h5 {
-		font-family: 'Montserrat', sans-serif;
-	}
-	.progress > svg {
-		height: 100%;
-		display: block;
-	}
-
-	.popover-content{
-		color: #fff !important;/*black color*/
-	}
-
-	.navbar .navbar-nav {
-		display: inline-block;
-		float: none;
-	}
-
-	.navbar .navbar-collapse {
-		text-align: center;
-	}
-
-	.navbar-default .navbar-nav>li>a {
-    	color: white;
-	}
-
-	.navbar-default .navbar-nav>li>a:hover {
-		color:white;
-	}
-
-	.navbar-default .navbar-nav>li>a:selected {
-		color:white;
-	}
-
-	.navbar-default .navbar-nav>li>a:active {
-		color:white;
-	}
-
-	.info {
-		
-		margin-top: -21px;
-		color:white;
-
-	}
-
-	a {
-		color: white;
-	}
-
-	.popover{
-		background: rgba(0,0,0,.85);
-		max-width: 500px;
-	}
-	
-	.popover.bottom .arrow:after { 
-		border-bottom-color: (0,0,0,.85);
-	}
-	.popover.top .arrow:after { 
-		border-top-color: rgba(0,0,0,.85);
-	}
-
-	.popover.bottom {
-		margin-top: -10px;
-		text-align: center;
-		color: black;
-	}
-
-	#h5 {
-		font-family: 'Montserrat', sans-serif;
-	}
-
-	.logo {
-		margin-left: 0px;
-		height: 50px;
-	}
-
-	
-
-
-</style>
 <body>
 	<nav class="navbar header navbar-default " style="border-radius:0px; height:90px; margin-bottom: 0px;">
 
@@ -373,7 +167,8 @@
 			</div>
 
 			<script>
-			if(<%= emotionArray[0].value%> > 50 && <%= socialArray[1].value%> < 40) {
+			
+				if(<%=socialArray[1].value%> < 30 && <%=emotionArray[0].value%> > 50) {
 				swal({
 				  title: "Don't be a bully!",
 				  text: "We've detected that your message may contain rhetoric representative of cyber-bullying. 20% of cyber-bullied children think about suicide and 1 in 10 actually attempt it. Please be a part of the solution and help #HackHarassment.",
