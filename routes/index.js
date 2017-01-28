@@ -61,47 +61,7 @@ router.post('/', function(req, res, next) {
         var extraversion = socialArray[2].value;
         var agreeableness = socialArray[3].value;
         var emotionalRange = socialArray[4].value;
-/*
-        if(extraversion - conscientiousness >= 30) {
-            //this is usually more casual
-            extraversion *= 3;
-        }
-        else {
-            //usuallly more formal
-            conscientiousness *= 3;
-        }
 
-        if(emotionalRange >= high && analytical >= high && conscientiousness >= high) {
-                coeff += 20;
-        }
-
-
-        //extraversion *= 3;
-        //conscientiousness *= 3;
-        ratio *= 1200;
-        tentative *= 4;
-        var valuesArray = [tentative, analytical, openness, conscientiousness, extraversion, agreeableness, emotionalRange, ratio];
-        var numArray = [];
-
-        valuesArray.forEach(function(num) {
-            if(num > 0) {
-                numArray.push(num);
-            }
-        })
-
-        console.log("Start\n");
-        var max = Math.max.apply(Math, numArray);
-        var min = Math.min.apply(Math, numArray);
-        numArray.forEach(function(num) {
-                num = (num - min)/(max - min) * 100;
-                console.log(num + "\n");
-                coeff += num;
-        })
-        console.log("End\n");
-
-        //console.log("\n\nTentative: " + tentative + "\nAnalytical: " + analytical + "\nOpenness: " + openness + "\nConscientiousness: " + conscientiousness + "\nExtraversion: " + extraversion + "\nAgreeableness: " + agreeableness + "\nEmotional Range: " + emotionalRange + "\nRatio: " + ratio + "\n\n");
-        coeff /= (numArray.length);
-*/
         coeff = openness + conscientiousness + agreeableness - tentative - extraversion;
         if(coeff < 33 && coeff >= 0) {
             color = '#CF000F';
